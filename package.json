@@ -3,7 +3,12 @@
     "pg": "^8.16.0"
   },
   "scripts": {
-     "start": "node front_server.js"
+  "build": "tsc",
+  "heroku-postbuild": "npm run build",
+  "start": "node dist/front_server.js"
 }
 
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
 }
