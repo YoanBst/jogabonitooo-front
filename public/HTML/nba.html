@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page d'accueil</title>
+        <link rel="stylesheet" href="../CSS/styleNBA.css">
+        <!-- Lien vers Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <h1><i class="brazil-title">Jogabonitooo</i></h1>
+                </div>
+                <div class="header-right">
+                    <a id="logout" href="login.html">Logout</a>
+                    <a href="page_accueil.html">Menu</a>
+                    <a href="panier.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <h1>Basketball items</h1>
+            <br>
+            <div class="image-container">
+                <!-- Exemple pour chaque produit -->
+                <div class="image-item">
+                    <img src="https://www.bshopbasketball.fr/77819-large_default/maillot-nba-enfant-stephen-curry-golden-state-warriors-nike-icon-edition.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Steph Curry : 100 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Stephen Curry" data-price="100">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://images.footballfanatics.com/milwaukee-bucks/milwaukee-bucks-nike-icon-edition-swingman-jersey-hunter-green-giannis-antetokounmpo-unisex_ss4_p-13349398+pv-2+u-f7s1p5esdr45cc71ei2w+v-dfc053bdff5c4933872ee9ff65ba6135.jpg?_hv=2&w=600" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Thanasis Antetokounmpo : 50 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Thanasis Antetokounmpo" data-price="50">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://images.footballfanatics.com/los-angeles-lakers/youth-nike-russell-westbrook-gold-los-angeles-lakers-2021/22-swingman-jersey-icon-edition_pi4447000_altimages_ff_4447200-644311fb9493e0683754alt3_full.jpg?_hv=2&w=600" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Russel Westbrook : 50 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Russel Westbrook" data-price="50">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://cdn2.basket4ballers.com/54371-thickbox_default/maillot-nba-allen-iverson-philadelphia-76ers-2000-01-swingman-mitchellness.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Allen Iverson : 110 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Allen Iverson" data-price="110">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://cdn1.basket4ballers.com/83460-thickbox_default/maillot-nba-michael-jordan-chicago-bulls-95-authentic-mitchellness-road.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Michael Jordan  : 150 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Michael Jordan" data-price="150">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://baskettemple.com/wp-content/uploads/2022/11/detroit-pistons-nike-icon-edition-swingman-jersey-blue-killian-hayes-unisex_ss4_p-13348366pv-2u-14djlhz1zxsafev3n3vjv-624ef0e62183439bbe405503551c4eef.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Killian Hayes  : 50 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Killian Hayes" data-price="50">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://ansel.frgimages.com/signed-magic-johnson-jersey-1984-85-mn-hwc-swingman-yellow-bas-wit_ss2_p-12412689+pv-1+u-12rsn9jdz52t8q7hcwn8+v-yhhnzjjosxudtezmdows.jpg?_hv=2&w=900" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Magic Johnson  : 150 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Magic Johnson" data-price="150">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://cdn2.basket4ballers.com/54368-thickbox_default/swingman-jersey-larry-bird-33-green-white-353j-301-fgylbi.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Larry Bird  : 150 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Larry Bird" data-price="150">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://cdn1.basket4ballers.com/198555-thickbox_default/maillot-nba-lamelo-ball-charlotte-hornets-nike-association-edition-2023-dn2071-100.jpg" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Lamelo Ball  : 80 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Lamelo Ball" data-price="80">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://images.footballfanatics.com/houston-rockets/houston-rockets-nike-icon-swingman-jersey-james-harden-mens_ss4_p-11890925+pv-1+u-9o4i6qy4g04pmyb32y40+v-7b6cbb41b138482d8799229e6c09e392.jpg?_hv=2&w=900" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey James Harden  : 100 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt James Harden" data-price="100">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://images.footballfanatics.com/charlotte-hornets/mens-mitchell-and-ness-muggsy-bogues-teal-charlotte-hornets-hardwood-classics-swingman-jersey_pi2751000_altimages_ff_2751345alt3_full.jpg?_hv=2&w=900" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Muggsy Bogues  : 80 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Muggsy Bogues" data-price="80">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <img src="https://www.fashionrerun.com/cdn/shop/files/b999b4a248529ae24a15ac3507cbdf86.jpg?v=1725711099&width=1080" >
+                    <div class="product-info">
+                        <p><span class="article-title">Jersey Derrick Rose : 110 $</span></p>
+                        <div class="product-actions">
+                            <button class="add-to-basket" data-name="Shirt Derrick Rose" data-price="110">Add to basket</button>
+                            <select class="product-size">
+                                <option value="" disabled selected>Size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <h1 class="brazil-title"><i>Never give up on your dreams</i></h1>
+        </footer>
+
+        <script src="../JS/achat.js"></script>
+    </body>
+</html>

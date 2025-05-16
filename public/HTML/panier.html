@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Basket</title>
+        <link rel="stylesheet" href="../CSS/stylePanier.css">
+        <!-- Lien vers Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <h1><i class="brazil-title">Jogabonitooo</i></h1>
+                    
+                    
+                </div>
+
+                <div class="header-right">
+                        <a id = "logout" href="login.html">Logout</a>
+                        <a href="page_accueil.html">Menu</a>
+                </div>
+        </header>
+        
+        <main>
+            <h2>Your cart :</h2>
+            <div id ="basket">
+
+                
+
+
+            </div>
+            <div id = "boutton">
+                <button id ="clear" onclick="clearBasket()">Clear</button>
+                <input type="text" id="country" placeholder="Your country">
+                <input type="text" id="adress" placeholder="Your adress">
+                <input type="text" id="card" placeholder="Your card number (16 digits)">
+                <button id="Buy" onclick="commander()">Buy </button>
+            </div>
+        </main>
+
+        <footer>
+            <h1 class ="brazil-title"><i>Never give up on your dreams</i></h1>
+        </footer>
+
+        <script src="../JS/panier.js"></script>
+    </body>
+</html>

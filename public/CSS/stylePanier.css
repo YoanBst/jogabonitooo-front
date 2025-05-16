@@ -1,0 +1,281 @@
+/* Style pour la section principale (entre le header et le footer) */
+main {
+    background-image: url('../HTML/images/fond_panier.jpg');
+
+    background-size: cover; /* L'image couvre toute la surface de l'élément */
+    background-position: center; /* Centre l'image dans la section */
+    background-repeat: no-repeat; /* Évite que l'image se répète */
+    flex: 1; /* Assure que cette section prend tout l'espace restant entre header et footer */
+    padding: 20px; /* Un peu de padding autour du contenu */
+
+
+}
+
+#basket{
+    text-align: left;
+    font-size: 1.5rem; /* Taille du texte */
+    color: white;
+
+}
+
+
+.brazil-title {
+    background: linear-gradient(90deg, #009739 0%, #FFDF00 50%, #3E4095 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+#boutton{
+    text-align: left;
+    font-size: 1.5rem; /* Taille du texte */
+    color: white;
+    margin-top: 20px; /* Espace au-dessus du bouton */
+}
+
+h2 {
+    font-size: 2.5rem; /* Taille du texte */
+    color: #f4f4f4; /* Couleur du texte */
+    margin-bottom: 20px; /* Espace en bas du titre */
+}
+
+
+
+/* Styles généraux */
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
+/* Structure principale */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
+}
+
+main {
+    flex: 1; /* Permet à la section principale de prendre tout l'espace restant */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #015c2c 0%, #009739 25%, #FFDF00 70%, #3E4095 100%);
+    color: #fff;
+    padding: 30px 0;
+    width: 100%;
+}
+/* Style du lien Menu dans header-right */
+.header-right a {
+    background: linear-gradient(90deg, #009739 0%, #FFDF00 50%, #3E4095 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-left: -20px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.header-right a:hover {
+    text-decoration: underline; /* Souligner au survol */
+    color: #ff6347; /* Changer la couleur au survol */
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* Header Left (Mon Site Web + Image) */
+.header-left {
+    display: flex; /* Assure que les éléments sont alignés horizontalement */
+    align-items: center;  /* Aligne verticalement le texte et l'image */
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+
+
+/* Header Right (Login et Register) */
+.header-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-right ul li {
+    margin-left: 20px;
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Cacher l'icône du panier par défaut */
+.cart-icon {
+    display: none;  /* L'icône est cachée par défaut */
+}
+
+/* Styles pour l'icône du panier */
+.cart-icon a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.cart-icon a:hover {
+    text-decoration: none;
+    color: #ffd700;
+}
+
+/* Styles du texte principal */
+main h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Container pour les images */
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet le retour à la ligne */
+    justify-content: center; /* Centre les éléments */
+    gap: 20px; /* Espace entre les images */
+    margin-top: 20px;
+}
+
+/* Style de chaque élément contenant une image */
+/* Uniformiser la taille des images */
+.image-item {
+    width: calc(33.33% - 20px); /* 3 éléments par ligne */
+    max-width: 400px; /* Taille max pour éviter des images trop grandes */
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;  /* Pour s'adapter au conteneur */
+    height: auto; /* Garde le ratio */
+    object-fit: cover; /* Coupe proprement les images */
+    border-radius: 8px;
+}
+
+.image-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Bouton Ajouter au panier */
+.image-item .add-to-basket {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.image-item .add-to-basket:hover {
+    background-color: #555;
+}
+
+/* Chat - Ajout d'un rectangle autour */
+.chat {
+    margin-top: 20px;
+    padding: 20px;
+    width: 350px; /* Ajuste la largeur du rectangle */
+    background-color: #fff; /* Fond blanc pour bien ressortir */
+    border: 2px solid #333; /* Bordure noire */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input et bouton du chat */
+.chat input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px; /* Espace entre l'input et le bouton */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Pour que le bouton prenne toute la largeur */
+    border-radius: 5px;
+}
+
+.chat button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #015c2c 0%, #009739 25%, #FFDF00 70%, #3E4095 100%);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Assure que le footer colle en bas */
+}
+
+/* Media Queries pour rendre la page responsive */
+@media screen and (max-width: 1024px) {
+    .image-item {
+        width: calc(50% - 20px); /* Passe à 2 éléments par ligne */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .image-item {
+        width: 100%; /* 1 élément par ligne */
+    }
+}
+

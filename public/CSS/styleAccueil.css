@@ -1,0 +1,301 @@
+/* Styles généraux */
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url(../HTML/images/fondaccueil.jpg); /* Image de fond si nécessaire */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Structure principale */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
+}
+
+
+.brazil-title {
+    background: linear-gradient(90deg, #009739 0%, #FFDF00 50%, #3E4095 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+
+main {
+    flex: 1; /* Permet à la section principale de prendre tout l'espace restant */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #015c2c 0%, #009739 25%, #FFDF00 70%, #3E4095 100%);
+    color: #fff;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* Header Left (Mon Site Web + Image) */
+.header-left {
+    display: flex; /* Assure que les éléments sont alignés horizontalement */
+    align-items: center;  /* Aligne verticalement le texte et l'image */
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Style de l'image à droite du nom du site */
+.site-logo {
+    width: 100px;  /* Ajuste la taille de l'image */
+    height: auto;
+    margin-left: 10px;  /* Espace entre le texte et l'image */
+}
+
+/* Header Right (Login et Register) */
+.header-right ul {
+    list-style-type: none;
+    margin-right: 20px;
+    padding: 0;
+    display: flex;
+}
+
+.header-right ul li {
+    margin-left: 20px;
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right ul li a:hover {
+    text-decoration: underline;
+}
+/* Style du lien Menu dans header-right */
+.header-right a {
+    background: linear-gradient(90deg, #009739 0%, #FFDF00 50%, #3E4095 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-left: -20px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+
+
+/* Styles pour l'icône du panier */
+.cart-icon a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.cart-icon a:hover {
+    text-decoration: none;
+    color: #ffd700;
+}
+
+/* Styles du texte principal */
+main h1 {
+    font-size: 2rem;
+    color: #555;
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+
+/* Container pour les images */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centre les images horizontalement */
+    gap: 20px; /* Espace entre les images */
+    margin-top: 20px;
+}
+
+/* Style de chaque élément contenant une image */
+/* Uniformiser la taille des images */
+.image-item img {
+    width: 500px;  /* Largeur fixe */
+    height: 400px; /* Hauteur fixe pour que toutes soient identiques */
+    object-fit: cover; /* Coupe l'image pour remplir sans distorsion */
+    border-radius: 8px; /* Coins arrondis pour un design plus moderne */
+}
+
+
+
+.image-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Chat - Ajout d'un rectangle autour */
+.chat {
+    margin-top: 20px;
+    padding: 20px;
+    width: 260px; /* Ajuste la largeur du rectangle */
+    background-color: #fff; /* Fond blanc pour bien ressortir */
+    border: 2px solid #333; /* Bordure noire */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input et bouton du chat */
+.chat input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px; /* Espace entre l'input et le bouton */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Pour que le bouton prenne toute la largeur */
+    border-radius: 5px;
+}
+
+.chat button:hover {
+    background-color: #555;
+}
+
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #015c2c 0%, #009739 25%, #FFDF00 70%, #3E4095 100%);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Assure que le footer colle en bas */
+}
+
+
+#cart-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-icon {
+    position: relative;
+    display: inline-block;
+}
+#messages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Ajoute une marge sous les messages */
+}
+#messages .message {
+    background: none;
+    background-color: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin: 6px 0;
+    display: block; /* <-- Important pour forcer l'empilement vertical */
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: 8px;
+    background-color: red !important;
+    color: #fff !important;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    /* Ajout pour forcer la couleur même si parent a un dégradé */
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #fff !important;
+    
+}
+
+
+/* Admin Page Styles */
+.user-item {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .remove-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+  
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.main-video {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    width: 600px;
+    max-width: 100%;
+}

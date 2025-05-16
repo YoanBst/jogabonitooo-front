@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page d'accueil</title>
+        <link rel="stylesheet" href="../CSS/styleAccueil.css">
+        <!-- Lien vers Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                   <h1><i class="brazil-title">Jogabonitooo</i></h1>
+                    
+                    
+                    
+                </div>
+                <div class="header-right">
+                    <a id = "logout" href="login.html">Logout</a>
+                    <a href="page_accueil.html">Menu</a>
+                    <a href="panier.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+
+        <main>
+            <h1>Sport artefacts, without moving from your home</h1>
+            <br>
+            <div> 
+                <p><i>Hey, dear sports lover! On this website, you’ll find a variety of sports items used by the greatest athletes. </i></p>
+                <p><i>Our products are frequently tested to ensure your satisfaction stays at its peak.</i></p>
+                <p><i>Simply click on one of the three images to find your happiness !"<i></p>
+            </div>
+            <br>
+                <div class="image-container">
+                    <div class="image-item">
+                        <a href = "nba.html">
+                            <img src="images/nba.jpg"  alt="NBA" class="image">
+                            
+                        </a>
+                        
+                    </div>
+                    <div class="image-item">
+                        <a href = "foot.html">
+                        <img src="images/messi.jpg" alt="Foot" class="image">
+                        </a>
+                        
+                    </div>
+                    <div class="image-item">
+                        <a href = "moto.html">
+                        <img src="images/moto2.jpg" alt="Moto" class="image">
+                        </a>
+                        
+                    </div>
+                </div>
+            </br>
+
+        <div class="video-container">
+            <video class="main-video" width="400" autoplay loop controls muted playsinline>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="chat-container" class="chat">
+            <h2>Let us a review!</h2>
+            <input type="text" id="message-input" placeholder="Write a review" />
+            <div id="messages"></div> <!-- Les messages s'affichent ici -->
+            <button id="send-button">Send</button>
+        </div>
+            
+            
+        </main>
+    <footer>
+        <h1 class ="brazil-title"><i>Never give up on your dreams</i></h1>
+        </footer>
+        <script src="../JS/chat.js"></script>
+    </body>
+</html>
