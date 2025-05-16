@@ -6,7 +6,7 @@
   "build": "tsc",
   "heroku-postbuild": "npm run build",
   "start": "node dist/front_server.js"
-}
+},
 
   "devDependencies": {
     "typescript": "^5.8.3"
