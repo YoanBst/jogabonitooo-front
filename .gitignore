@@ -9,3 +9,4 @@ yarn-debug.log*
 yarn-error.log*
 public/HTML/video.mp4
 public/HTML/video.mp4
+.gitattributes
