@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "pg": "^8.16.0"
-  }
+  },
+  "scripts": {
+     "start": "node front_server.js"
+}
+
 }
