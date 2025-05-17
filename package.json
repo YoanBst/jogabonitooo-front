@@ -4,10 +4,8 @@
     "pg": "^8.16.0"
   },
   "scripts": {
-    "build": "tsc",
-    "heroku-postbuild": "npm run build",
-    "start": "node dist/front_server.js"
-  },
+  "start": "node front_server.js"
+ },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.9",
     "typescript": "^5.8.3"
