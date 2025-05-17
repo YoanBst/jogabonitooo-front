@@ -70,7 +70,7 @@ async function displayMessage(owner, message, authToken) {
 
 // Fonction pour gérer le WebSocket et l'envoi de messages
 function setupWebSocket(authToken) {
-    const ws = new WebSocket("wss://localhost:3000/ws");
+    const ws = new WebSocket("wss://jogabonitooo-back.cluster-ig3.igpolytech.fr/ws");
 
     ws.onopen = () => {
         console.log("✅ Connecté au WebSocket");
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Fonction pour récupérer le token JWT dans les cookies
 async function getAuthToken() {
     try {
-        const response = await fetch("https://localhost:3000/get-token", {
+        const response = await fetch(" https://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/get-token", {
             method: 'GET',
             credentials: 'include',  // Assure-toi d'inclure les cookies
         });
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Récupère 4 anciens messages aléatoires
     try {
-        const response = await fetch("https://localhost:3000/api/messages");
+        const response = await fetch(" https://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/api/messages");
         const data = await response.json();
         if (data.messages) {
             const chatContainer = document.getElementById("messages");

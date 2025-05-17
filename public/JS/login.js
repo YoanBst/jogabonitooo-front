@@ -4,7 +4,7 @@ function login() {
   
     const data = { username: login, password: password };
   
-    fetch('https://localhost:3000/login', {
+    fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/login', {
       method: 'POST',
       mode: 'cors',
       credentials: 'include',
@@ -43,7 +43,7 @@ function login() {
 // Pour la page d'accueil : vérifie si l'utilisateur est connecté
 window.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("page_accueil.html")) {
-      fetch('https://localhost:3000/me', {
+      fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/me', {
         method: 'GET',
         credentials: 'include'  // Inclut les cookies avec la requête
       })
