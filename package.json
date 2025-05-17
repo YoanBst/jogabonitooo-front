@@ -9,6 +9,7 @@
     "start": "node dist/front_server.js"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
     "typescript": "^5.8.3"
   }
 }
