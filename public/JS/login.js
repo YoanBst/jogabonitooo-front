@@ -43,7 +43,7 @@ function login() {
 // Pour la page d'accueil : vérifie si l'utilisateur est connecté
 window.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("page_accueil.html")) {
-      fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr/me', {
+      fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/me', {
         method: 'GET',
         credentials: 'include'  // Inclut les cookies avec la requête
       })

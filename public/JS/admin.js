@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Fonction qui supprime un utilisateur
   function removeUser(userId, userElement) {
-    fetch(` https://jogabonitooo-back.cluster-ig3.igpolytech.fr/users/${userId}`, {
+    fetch(`https://jogabonitooo-back.cluster-ig3.igpolytech.fr/users/${userId}`, {
       method: "DELETE",
     })
       .then(response => response.json())
