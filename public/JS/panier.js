@@ -158,7 +158,7 @@ function commander() {
         basket: basket
     };
 
-    fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/commande', {
+    fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/commande', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

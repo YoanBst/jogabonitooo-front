@@ -4,7 +4,7 @@ function login() {
   
     const data = { username: login, password: password };
   
-    fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr/login', {
+    fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/login', {
       method: 'POST',
       mode: 'cors',
       credentials: 'include',
