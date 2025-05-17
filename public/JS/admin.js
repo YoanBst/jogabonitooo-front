@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch(" https://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/users")
+    fetch(" https://jogabonitooo-back.cluster-ig3.igpolytech.fr/users")
       .then(response => response.json())
       .then(data => {
         const userList = document.getElementById("user-list"); // L'élément où on affiche les utilisateurs
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Fonction qui supprime un utilisateur
   function removeUser(userId, userElement) {
-    fetch(` https://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/users/${userId}`, {
+    fetch(` https://jogabonitooo-back.cluster-ig3.igpolytech.fr/users/${userId}`, {
       method: "DELETE",
     })
       .then(response => response.json())

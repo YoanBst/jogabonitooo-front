@@ -11,7 +11,7 @@ function register() {
 
     console.log("Sending data:", data);  // Log des données envoyées
 
-    fetch('httpS://jogabonitooo-back.cluster-ig3.igpolytech.fr:8080/register', {
+    fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/register', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
