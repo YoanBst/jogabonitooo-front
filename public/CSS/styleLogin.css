@@ -22,8 +22,9 @@ body, html {
 
 /* Titre "Welcome back" en haut de la page */
 h1 {
+
     font-size: 75px;
-    color: #333;
+    color: white;
     margin-top: 40px; /* Décalage depuis le haut */
     text-align: center; /* Centré horizontalement */
 }
