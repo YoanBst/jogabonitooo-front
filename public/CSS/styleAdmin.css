@@ -191,3 +191,46 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Colonne camemberts à droite */
+#products-pie,
+#countries-pie,
+#no-sales-msg,
+#no-country-msg {
+    display: block;
+    margin: 30px auto 0 auto;
+    max-width: 400px;
+}
+
+/* Regroupe les camemberts dans la même colonne à droite */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+#user-list {
+    grid-column: 1;
+}
+#message-list {
+    grid-column: 2;
+}
+#products-pie,
+#countries-pie,
+#no-sales-msg,
+#no-country-msg {
+    grid-column: 3;
+}
+
+@media (max-width: 1000px) {
+    main {
+        display: block;
+    }
+    #products-pie,
+    #countries-pie,
+    #no-sales-msg,
+    #no-country-msg {
+        margin: 30px auto 0 auto;
+    }
+}

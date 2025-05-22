@@ -104,7 +104,7 @@ function removeMessage(messageId, messageElement) {
     });
 }
 
-// Récupère les ventes et affiche le camembert
+
 // Récupère les ventes et affiche le camembert
 fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
   .then(response => response.json())
@@ -145,5 +145,45 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
   })
   .catch(error => {
     console.error("Erreur lors du fetch des ventes produits:", error);
+  });
+
+  // Camembert des pays de livraison
+fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
+  .then(response => response.json())
+  .then(data => {
+    const ctx = document.getElementById('countries-pie').getContext('2d');
+    const noCountryMsg = document.getElementById('no-country-msg');
+    const topPays = (data.pays || []).slice(0, 4);
+
+    if (!topPays.length) {
+      document.getElementById('countries-pie').style.display = "none";
+      noCountryMsg.style.display = "block";
+      return;
+    }
+
+    const labels = topPays.map(v => v.country);
+    const values = topPays.map(v => v.nb);
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: [
+            '#009739', '#FFDF00', '#3E4095', '#FF6384'
+          ],
+        }]
+      },
+      options: {
+        responsive: false,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Erreur lors du fetch des pays clients:", error);
   });
   
