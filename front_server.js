@@ -11,7 +11,7 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(publicDir, 'HTML', 'login.html'));
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 http.createServer(app).listen(PORT, () => {
   console.log(`Express HTTP static server running on port ${PORT} for the files in ${publicDir}`);
