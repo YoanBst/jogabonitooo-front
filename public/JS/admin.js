@@ -153,7 +153,7 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
   .then(data => {
     const ctx = document.getElementById('countries-pie').getContext('2d');
     const noCountryMsg = document.getElementById('no-country-msg');
-    const topPays = (data.pays || []).slice(0, 4);
+    const topPays = (data.ventes || []).slice(0, 4);
 
     if (!topPays.length) {
       document.getElementById('countries-pie').style.display = "none";
@@ -161,8 +161,8 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
       return;
     }
 
-    const labels = topPays.map(v => v.country);
-    const values = topPays.map(v => v.nb);
+    const labels = topPays.map(v => v.pays);
+    const values = topPays.map(v => v.quantite);
 
     new Chart(ctx, {
       type: 'pie',
