@@ -52,4 +52,58 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Error deleting user");
       });
   }
+
+ 
+
+// Afficher la liste des messages
+fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/messages")
+  .then(response => response.json())
+  .then(data => {
+    const messageList = document.getElementById("message-list"); // L'élément où on affiche les messages
+
+    if (!messageList) return;
+
+    data.messages.forEach(message => {
+      const messageElement = document.createElement("div");
+      messageElement.classList.add("message-item");
+      messageElement.textContent = `ID: ${message.id} | ${message.owner}: ${message.message}`;
+
+      // Créer un bouton Remove pour chaque message
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Remove";
+      removeButton.classList.add("remove-btn");
+
+      removeButton.addEventListener("click", () => {
+        removeMessage(message.id, messageElement);
+      });
+
+      messageElement.appendChild(removeButton);
+      messageList.appendChild(messageElement);
+    });
+  })
+  .catch(error => {
+    console.error("Erreur lors du fetch des messages:", error);
+  });
+
+
+
+// Fonction qui supprime un message
+function removeMessage(messageId, messageElement) {
+  fetch(`https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/messages/${messageId}`, {
+    method: "DELETE",
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message === "Message deleted") {
+        messageElement.remove();
+        alert("Message deleted successfully");
+      } else {
+        alert("Error deleting message");
+      }
+    })
+    .catch(error => {
+      console.error("Error deleting message:", error);
+      alert("Error deleting message");
+    });
+}
   
