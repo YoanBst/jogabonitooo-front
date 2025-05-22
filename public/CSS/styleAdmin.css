@@ -142,3 +142,20 @@ footer {
     padding: 20px 0;
     margin-top: auto;
 }
+
+/* Style pour la liste des messages (identique à user-item) */
+#message-list {
+    margin-top: 30px;
+}
+
+.message-item {
+    margin: 10px auto;
+    padding: 10px 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
