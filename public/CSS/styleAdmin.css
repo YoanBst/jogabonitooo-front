@@ -8,7 +8,39 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+/* Mise en page 3 colonnes pour la page admin */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+}
 
+#user-list, #message-list {
+    min-width: 300px;
+    max-width: 350px;
+    flex: 1 1 0;
+}
+
+#products-pie, #no-sales-msg {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+    }
+    #user-list, #message-list {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
 /* Header */
 header {
     background: linear-gradient(90deg, #015c2c 0%, #009739 25%, #FFDF00 70%, #3E4095 100%);

@@ -105,21 +105,24 @@ function removeMessage(messageId, messageElement) {
 }
 
 // Récupère les ventes et affiche le camembert
+// Récupère les ventes et affiche le camembert
 fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
   .then(response => response.json())
   .then(data => {
     const ctx = document.getElementById('products-pie').getContext('2d');
     const noSalesMsg = document.getElementById('no-sales-msg');
 
-    
-    if (!data || !data.ventes || data.ventes.length === 0) {
+    // Ne garder que les 4 meilleures ventes
+    const topVentes = (data.ventes || []).slice(0, 4);
+
+    if (!topVentes.length) {
       document.getElementById('products-pie').style.display = "none";
       noSalesMsg.style.display = "block";
       return;
     }
 
-    const labels = data.ventes.map(v => v.nom);
-    const values = data.ventes.map(v => v.quantite);
+    const labels = topVentes.map(v => v.nom);
+    const values = topVentes.map(v => v.quantite);
 
     new Chart(ctx, {
       type: 'pie',
