@@ -54,21 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
  
-
 // Afficher la liste des messages
-fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/messages")
+fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/messages/all")
   .then(response => response.json())
   .then(data => {
-    const messageList = document.getElementById("message-list"); // L'élément où on affiche les messages
-
+    const messageList = document.getElementById("message-list");
     if (!messageList) return;
 
     data.messages.forEach(message => {
       const messageElement = document.createElement("div");
       messageElement.classList.add("message-item");
-      messageElement.textContent = `ID: ${message.id} | ${message.owner}: ${message.message}`;
+      messageElement.textContent = `${message.owner}: ${message.message}`;
 
-      // Créer un bouton Remove pour chaque message
       const removeButton = document.createElement("button");
       removeButton.textContent = "Remove";
       removeButton.classList.add("remove-btn");
