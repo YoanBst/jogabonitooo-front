@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.0"
+  },
+  "scripts": {
+    "start": "node front_server.js"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "typescript": "^5.8.3"
+  }
+}
