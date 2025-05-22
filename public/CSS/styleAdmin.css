@@ -7,7 +7,8 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}/* Organisation en 3 colonnes pour la page admin */
+}
+/* Mise en page 3 colonnes pour la page admin */
 main {
     display: flex;
     flex-direction: row;
@@ -17,38 +18,15 @@ main {
     text-align: left;
 }
 
-/* Colonne utilisateurs */
-#user-list {
+#user-list, #message-list {
     min-width: 300px;
     max-width: 350px;
     flex: 1 1 0;
 }
 
-/* Colonne messages */
-#message-list {
-    min-width: 300px;
-    max-width: 350px;
-    flex: 1 1 0;
-}
-
-/* Colonne camembert */
 #products-pie, #no-sales-msg {
     display: block;
     margin: 0 auto;
-}
-
-/* Place chaque bloc (titre + paragraphe + liste) dans une colonne */
-main > h2, main > p, main > #user-list,
-main > #message-list, main > #products-pie,
-main > #no-sales-msg {
-    /* Reset margin for better alignment */
-    margin-left: 0;
-    margin-right: 0;
-}
-
-main > h2, main > p {
-    /* Pour éviter que les titres/paragraphes soient trop larges */
-    max-width: 350px;
 }
 
 @media (max-width: 1000px) {
