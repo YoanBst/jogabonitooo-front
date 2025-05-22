@@ -1,1 +1,1 @@
-web: node front_server.js
+web: npm start
