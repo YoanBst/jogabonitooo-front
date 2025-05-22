@@ -15,7 +15,8 @@ Fonctionnalités :
 
     Vérification des informations de livraison, et ajout dans la base de données de l'adresse de l'utilisateur, ainsi que des articles constituant sa commande
 
-    Page d'administration, où l’administrateur peut retirer un utilisateur du site
+    Page d'administration, où l’administrateur peut retirer un utilisateur du site, un message, visualiser un graphique des meilleures ventes et des pays de livraison
+    
 
 
 Fonctionnalités prévues au départ mais non implémentées :
