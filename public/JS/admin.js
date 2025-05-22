@@ -103,4 +103,44 @@ function removeMessage(messageId, messageElement) {
       alert("Error deleting message");
     });
 }
+
+// Récupère les ventes et affiche le camembert
+fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
+  .then(response => response.json())
+  .then(data => {
+    const ctx = document.getElementById('products-pie').getContext('2d');
+    const noSalesMsg = document.getElementById('no-sales-msg');
+
+    
+    if (!data || !data.ventes || data.ventes.length === 0) {
+      document.getElementById('products-pie').style.display = "none";
+      noSalesMsg.style.display = "block";
+      return;
+    }
+
+    const labels = data.ventes.map(v => v.nom);
+    const values = data.ventes.map(v => v.quantite);
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: [
+            '#009739', '#FFDF00', '#3E4095', '#FF6384', '#36A2EB', '#FFCE56'
+          ],
+        }]
+      },
+      options: {
+        responsive: false,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Erreur lors du fetch des ventes produits:", error);
+  });
   
