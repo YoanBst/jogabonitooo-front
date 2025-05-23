@@ -322,13 +322,14 @@ footer {
 }
 
 
+/* ...existing code... */
+
 .product-actions {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     margin-top: 10px;
-    flex-wrap: wrap;
 }
 
 .size-favorite-group {
@@ -349,7 +350,7 @@ footer {
 }
 
 .favorite-btn.active {
-    color: #e74c3c; /* Rouge quand en favoris */
+    color: #e74c3c;
 }
 
 .favorite-btn:hover {
