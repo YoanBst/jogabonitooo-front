@@ -109,17 +109,11 @@ function removeMessage(messageId, messageElement) {
 fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
   .then(response => response.json())
   .then(data => {
-    // Calcul du total des ventes (quantité)
+    // Calcul du total des ventes
     const total = (data.ventes || []).reduce((sum, v) => sum + v.quantite, 0);
-    // Calcul du total en dollars
-    const totalDollars = (data.ventes || []).reduce((sum, v) => sum + v.total, 0);
-
     const totalVentesDiv = document.getElementById('total-ventes');
     if (totalVentesDiv) {
-      totalVentesDiv.innerHTML = `
-        Total of sales: ${total}<br>
-        Total in dollars: $${totalDollars.toFixed(2)}
-      `;
+      totalVentesDiv.textContent = `Total of sales : ${total}`;
     }
 
     const ctx = document.getElementById('products-pie').getContext('2d');
