@@ -31,6 +31,37 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Product added to basket !");
         });
     });
+
+    // NOUVEAU : Formatage automatique des champs de paiement
+    // Formatage automatique du numéro de carte
+    const cardInput = document.getElementById('card');
+    if (cardInput) {
+        cardInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+            let formatted = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formatted;
+        });
+    }
+
+    // Formatage de la date d'expiration
+    const expiryInput = document.getElementById('expiry');
+    if (expiryInput) {
+        expiryInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+    }
+
+    // CVV - seulement des chiffres
+    const cvvInput = document.getElementById('cvv');
+    if (cvvInput) {
+        cvvInput.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -45,42 +76,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const basketKey = `basket_${userId}`;
     let basket = JSON.parse(localStorage.getItem(basketKey)) || [];
 
-    
-
     const list = document.createElement('ul');
     let total = 0;
 
-    
-
     basket.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.textContent = `${item.name} - ${item.price} $ - Taille: ${item.size ? item.size : "Non spécifiée"} - Quantité: ${item.quantity}`;
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price} $ - Taille: ${item.size ? item.size : "Non spécifiée"} - Quantité: ${item.quantity}`;
 
-    // Bouton pour retirer une quantité
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Remove';
-    removeBtn.style.marginLeft = '15px';
-    removeBtn.onclick = function() {
-        if (item.quantity > 1) {
-            item.quantity -= 1;
-        } else {
-            basket.splice(index, 1);
-        }
-        localStorage.setItem(basketKey, JSON.stringify(basket));
-        location.reload(); // Recharge la page pour mettre à jour l'affichage
-    };
+        // Bouton pour retirer une quantité
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.style.marginLeft = '15px';
+        removeBtn.onclick = function() {
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                basket.splice(index, 1);
+            }
+            localStorage.setItem(basketKey, JSON.stringify(basket));
+            location.reload(); // Recharge la page pour mettre à jour l'affichage
+        };
 
-    li.appendChild(removeBtn);
-    list.appendChild(li);
-    total += item.price * item.quantity;
-});
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+        total += item.price * item.quantity;
+    });
 
     basketDiv.appendChild(list);
 
     const totalP = document.createElement('p');
-    totalP.innerHTML = 
-    `<strong>Total: ${total.toFixed(2)} $</strong>
-    `;
+    totalP.innerHTML = `<strong>Total: ${total.toFixed(2)} $</strong>`;
     basketDiv.appendChild(totalP);
 });
 
@@ -97,15 +122,10 @@ function clearBasket() {
     localStorage.setItem("cartCount", 0); // Réinitialise le compteur
 
     const basketDiv = document.getElementById('basket');
-    basketDiv.innerHTML = `
-        
-        <p><strong>Total: 0 $</strong></p>
-    `;
+    basketDiv.innerHTML = `<p><strong>Total: 0 $</strong></p>`;
 }
 
-
-
-
+// FONCTION COMMANDER MODIFIÉE avec validation CVV et date d'expiration
 function commander() {
     const userId = localStorage.getItem('userId');
     if (!userId) {
@@ -124,19 +144,33 @@ function commander() {
     const adressInput = document.getElementById('adress');
     const cardInput = document.getElementById('card');
     const countryInput = document.getElementById('country');
+    const expiryInput = document.getElementById('expiry');
+    const cvvInput = document.getElementById('cvv');
 
     const adress = adressInput.value;
-    const card = cardInput.value;
+    const card = cardInput.value.replace(/\s/g, ''); // Enlève les espaces
     const country = countryInput.value;
+    const expiry = expiryInput.value;
+    const cvv = cvvInput.value;
 
-
-    if (!adress || !card || !country) {
-        alert("Please fufill all of the fields !");
+    // VALIDATION COMPLÈTE
+    if (!adress || !card || !country || !expiry || !cvv) {
+        alert("Please fulfill all of the fields !");
         return;
     }
 
     if (card.length !== 16 || isNaN(card)) {
-        alert("Your number card need to be a 16-digit number !");
+        alert("Your card number needs to be a 16-digit number !");
+        return;
+    }
+
+    if (!/^\d{2}\/\d{2}$/.test(expiry)) {
+        alert("Expiry date must be in MM/YY format!");
+        return;
+    }
+
+    if (cvv.length !== 3 || isNaN(cvv)) {
+        alert("CVV must be a 3-digit number!");
         return;
     }
 
@@ -174,11 +208,12 @@ function commander() {
                 alert("Thank you ! Your order will be delivered in 14 days !");
             }
 
-            
-            clearBasket(); // Vider le panier après la commande
+            clearBasket();
             adressInput.value = '';
             cardInput.value = '';
             countryInput.value = '';
+            expiryInput.value = '';
+            cvvInput.value = '';
             
         } else {
             alert("Erreur lors de la commande : " + data.message);
@@ -189,6 +224,5 @@ function commander() {
         alert('Erreur lors de la commande');
     });
 }
-
 
 
