@@ -235,9 +235,15 @@ main {
     }
 }
 
-#total-ventes {
+.totaux-flex {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     margin: 40px auto 0 auto;
-    max-width: 400px;
+    max-width: 820px;
+}
+
+.total-box {
     background: #f8f8f8;
     border: 2px solid #009739;
     border-radius: 10px;
@@ -247,4 +253,7 @@ main {
     color: #222;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0;
 }
