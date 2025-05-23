@@ -5,7 +5,6 @@
         <title>Basket</title>
         <link rel="icon" type="image/png" href="images/ney.png">
         <link rel="stylesheet" href="../CSS/stylePanier.css">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
     
@@ -14,35 +13,67 @@
             <div class="container">
                 <div class="header-left">
                     <h1><i class="brazil-title">Jogabonitooo</i></h1>
-                    
-                    
                 </div>
-
                 <div class="header-right">
-                        <a id = "logout" href="login.html">Logout</a>
-                        <a href="page_accueil.html">Menu</a>
+                    <a id="logout" href="login.html">Logout</a>
+                    <a href="page_accueil.html">Menu</a>
                 </div>
+            </div>
         </header>
         
         <main>
             <h2>Your cart :</h2>
-            <div id ="basket">
+            <div id="basket"></div>
+            
+            <div class="payment-container">
+                <h3>Payment Information</h3>
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" placeholder="France">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adress">Delivery Address</label>
+                        <input type="text" id="adress" placeholder="123 Main Street, Paris">
+                    </div>
+                    
+                    <div class="card-input-container">
+                        <label for="card">Card Number</label>
+                        <div class="card-number-wrapper">
+                            <input type="text" id="card" placeholder="1234 5678 9012 3456" maxlength="19">
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
+                        </div>
+                    </div>
 
-                
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
 
-
-            </div>
-            <div id = "boutton">
-                <button id ="clear" onclick="clearBasket()">Clear</button>
-                <input type="text" id="country" placeholder="Your country">
-                <input type="text" id="adress" placeholder="Your adress">
-                <input type="text" id="card" placeholder="Your card number (16 digits)">
-                <button id="Buy" onclick="commander()">Buy </button>
+                    <div class="button-group">
+                        <button id="clear" onclick="clearBasket()" class="clear-btn">
+                            <i class="fas fa-trash"></i> Clear Cart
+                        </button>
+                        <button id="Buy" onclick="commander()" class="buy-btn">
+                            <i class="fas fa-lock"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
             </div>
         </main>
 
         <footer>
-            <h1 class ="brazil-title"><i>Never give up on your dreams</i></h1>
+            <h1 class="brazil-title"><i>Never give up on your dreams</i></h1>
         </footer>
 
         <script src="../JS/panier.js"></script>

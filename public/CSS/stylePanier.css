@@ -279,3 +279,161 @@ footer {
     }
 }
 
+/* Conteneur de paiement moderne */
+.payment-container {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+}
+
+.payment-container h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.payment-form label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.payment-form input[type="text"] {
+    padding: 14px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+}
+
+.payment-form input[type="text"]:focus {
+    outline: none;
+    border-color: #009739;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 151, 57, 0.1);
+}
+
+.card-input-container {
+    position: relative;
+}
+
+.card-number-wrapper {
+    position: relative;
+}
+
+.card-icons {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.card-icons i {
+    font-size: 24px;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.clear-btn, .buy-btn {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.clear-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.clear-btn:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.buy-btn {
+    background: linear-gradient(135deg, #009739 0%, #007a2f 100%);
+    color: white;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(135deg, #007a2f 0%, #005a22 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 151, 57, 0.3);
+}
+
+.clear-btn:active, .buy-btn:active {
+    transform: translateY(0);
+}
+
+/* Animations pour les inputs invalides */
+.payment-form input.error {
+    border-color: #e74c3c;
+    background: #fdf2f2;
+}
+
+.payment-form input.error:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .payment-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
+
