@@ -194,13 +194,7 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
   });
 
   
-async function getTotalVentesDollars() {
-  const result = await client.queryObject<{ total: number | bigint }>(
-    `SELECT SUM(price * quantity) AS total FROM command_items`
-  );
-  const total = result.rows[0].total;
-  return typeof total === "bigint" ? Number(total) : (total || 0);
-}
+
 
 Promise.all([
   fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-quantite").then(r => r.json()),
