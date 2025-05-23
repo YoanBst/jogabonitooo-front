@@ -109,15 +109,21 @@ function removeMessage(messageId, messageElement) {
 fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-produits")
   .then(response => response.json())
   .then(data => {
+    // Calcul du total des ventes
+    const total = (data.ventes || []).reduce((sum, v) => sum + v.quantite, 0);
+    const totalVentesDiv = document.getElementById('total-ventes');
+    if (totalVentesDiv) {
+      totalVentesDiv.textContent = `Total des ventes : ${total}`;
+    }
+
     const ctx = document.getElementById('products-pie').getContext('2d');
     const noSalesMsg = document.getElementById('no-sales-msg');
-
-    // Ne garder que les 4 meilleures ventes
     const topVentes = (data.ventes || []).slice(0, 4);
 
     if (!topVentes.length) {
       document.getElementById('products-pie').style.display = "none";
       noSalesMsg.style.display = "block";
+      if (totalVentesDiv) totalVentesDiv.textContent = "";
       return;
     }
 
