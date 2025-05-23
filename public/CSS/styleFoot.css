@@ -332,6 +332,20 @@ footer {
     flex-wrap: wrap;
 }
 
+.add-to-basket {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: -2px; /* Remonte légèrement le bouton */
+}
+
+.add-to-basket:hover {
+    background-color: #555;
+}
+
 .size-favorite-group {
     display: flex;
     align-items: center;
