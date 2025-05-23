@@ -192,4 +192,25 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
   .catch(error => {
     console.error("Erreur lors du fetch des pays clients:", error);
   });
+
   
+async function getTotalVentesDollars() {
+  const result = await client.queryObject<{ total: number | bigint }>(
+    `SELECT SUM(price * quantity) AS total FROM command_items`
+  );
+  const total = result.rows[0].total;
+  return typeof total === "bigint" ? Number(total) : (total || 0);
+}
+
+Promise.all([
+  fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-quantite").then(r => r.json()),
+  fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-dollars").then(r => r.json())
+]).then(([quantite, dollars]) => {
+  const totalVentesDiv = document.getElementById('total-ventes');
+  if (totalVentesDiv) {
+    totalVentesDiv.innerHTML = `
+      Total of sales: ${quantite.total}<br>
+      Total in dollars: $${dollars.total.toFixed(2)}
+    `;
+  }
+});
