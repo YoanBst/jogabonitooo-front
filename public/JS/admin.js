@@ -202,7 +202,7 @@ function afficherTotalDollars() {
     .then(data => {
       const totalDollarsDiv = document.getElementById('total-dollars');
       if (totalDollarsDiv) {
-        totalDollarsDiv.textContent = `Total in dollars: $${Number(data.total).toFixed(2)}`;
+        totalDollarsDiv.textContent = `Total in dollars: ${Number(data.total).toFixed(2)} $`;
       }
     });
 }
