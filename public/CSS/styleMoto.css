@@ -325,12 +325,15 @@ footer {
 
 /* ...existing code... */
 
+/* ...existing code... */
+
 .product-actions {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .size-favorite-group {
