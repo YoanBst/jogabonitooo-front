@@ -196,15 +196,17 @@ fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-pays")
   
 
 
-Promise.all([
-  fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-quantite").then(r => r.json()),
-  fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-dollars").then(r => r.json())
-]).then(([quantite, dollars]) => {
-  const totalVentesDiv = document.getElementById('total-ventes');
-  if (totalVentesDiv) {
-    totalVentesDiv.innerHTML = `
-      Total of sales: ${quantite.total}<br>
-      Total in dollars: $${dollars.total.toFixed(2)}
-    `;
-  }
-});
+function afficherTotalDollars() {
+  fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/ventes-total-dollars")
+    .then(r => r.json())
+    .then(data => {
+      const totalVentesDiv = document.getElementById('total-ventes');
+      if (totalVentesDiv) {
+        let html = totalVentesDiv.innerHTML || '';
+        // On enlève l'ancienne ligne si elle existe
+        html = html.replace(/Total in dollars:.*<br>?/g, '');
+        totalVentesDiv.innerHTML = html + `Total in dollars: $${Number(data.total).toFixed(2)}`;
+      }
+    });
+}
+afficherTotalDollars();
