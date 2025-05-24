@@ -88,9 +88,11 @@ async function loadFavoris() {
 }
 
 // Supprimer un favori
-async function removeFavori(productName, size) {
+ async function removeFavori(productName, size) {
     const userId = localStorage.getItem("userId");
     if (!userId) return;
+    // Ajoute un log pour debug
+    console.log("Suppression favori:", { userId, productName, size });
     await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },

@@ -146,7 +146,7 @@ footer {
 }
 .favori-card img {
     width: 100%;
-    height: 120px;
+    height: 80px;
     object-fit: cover;
     border-radius: 6px;
 }
