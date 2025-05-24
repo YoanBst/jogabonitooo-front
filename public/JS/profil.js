@@ -26,6 +26,7 @@ async function loadFavoris() {
             data.favorites.forEach(fav => {
                 
                 let imgSrc = "https://via.placeholder.com/200x120?text=Produit";
+                const name = fav.product_name.toLowerCase();
                 if (name.includes("kostas mitroglou")) imgSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJbD3zmDlmhH0c2U6DxJagrWJcVu1J0b4BSg&s";
                 else if (name.includes("erlin braut haaland")) imgSrc = "https://i.ebayimg.com/images/g/488AAOSwX51kggjh/s-l1200.jpg";
                 else if (name.includes("fabian ruiz")) imgSrc = "https://www.aisope.fr/images/PZQW/WSDDH2690.jpg";
