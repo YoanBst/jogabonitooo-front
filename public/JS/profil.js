@@ -121,9 +121,21 @@ async function loadCommandes() {
                     });
                     itemsHtml += '</ul>';
                 }
+                // Formatage de la date
+                let dateAffichee = "?";
+                if (cmd.date) {
+                    const d = new Date(cmd.date);
+                    dateAffichee = d.toLocaleString('fr-FR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                }
                 commandesList.innerHTML += `
                     <div class="commande-card">
-                        <div><b>Date :</b> ${cmd.date || "?"}</div>
+                        <div><b>Date :</b> ${dateAffichee}</div>
                         <div><b>Total :</b> ${cmd.total} $</div>
                         <div><b>Adresse :</b> ${cmd.adress || "-"}</div>
                         <div><b>Articles :</b> ${itemsHtml || "Non disponible"}</div>
