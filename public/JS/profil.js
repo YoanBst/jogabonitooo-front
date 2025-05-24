@@ -31,17 +31,18 @@ async function loadFavoris() {
                 if (fav.product_name.toLowerCase().includes("curry")) imgSrc = "https://www.bshopbasketball.fr/77819-large_default/maillot-nba-enfant-stephen-curry-golden-state-warriors-nike-icon-edition.jpg";
                 
 
-                favorisList.innerHTML += `
-                    <div class="favori-card">
-                        <img src="${imgSrc}" alt="${fav.product_name}">
-                        <div><b>${fav.product_name}</b></div>
-                        <div>Taille : ${fav.size || "-"}</div>
-                        <div>Prix : ${fav.price} $</div>
-                        <button class="favorite-btn" title="Retirer des favoris" onclick="removeFavori('${fav.product_name.replace(/'/g,"\\'")}', '${fav.size || ""}')">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                `;
+                        
+            favorisList.innerHTML += `
+                <div class="favori-card">
+                    <img src="${imgSrc}" alt="${fav.product_name}">
+                    <div><b>${fav.product_name}</b></div>
+                    <div>Prix : ${fav.price} $</div>
+                    <button class="favorite-btn" title="Retirer des favoris" onclick="removeFavori('${fav.product_name.replace(/'/g,"\\'")}', '${fav.size || ""}')">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            `;
+
             });
         } else {
             favorisList.innerHTML = "<span>Aucun favori pour l'instant.</span>";
