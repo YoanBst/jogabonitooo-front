@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isActive) {
             // SUPPRESSION du favori
             const body = { userId, productName };
-            ody.size = size ? size : null; 
+            body.size = size ? size : null; 
 
             const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
                 method: "DELETE",
