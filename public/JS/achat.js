@@ -79,54 +79,58 @@ document.addEventListener("DOMContentLoaded", function () {
     loadFavoritesState();
 
     // Fonction pour basculer l'état des favoris
-    async function toggleFavorite(button) {
-        const userId = localStorage.getItem("userId");
-        if (!userId) {
-            alert("Vous devez être connecté pour ajouter aux favoris!");
-            return;
-        }
-
-        const productName = button.getAttribute("data-product");
-        const price = parseFloat(button.getAttribute("data-price"));
-        
-        // Récupérer la taille sélectionnée
-        const productInfo = button.closest('.product-info');
-        const sizeSelect = productInfo.querySelector('.product-size');
-        const size = sizeSelect ? sizeSelect.value : "";
-
-        const isActive = button.classList.contains('active');
-
-        try {
-            if (isActive) {
-                // Supprimer des favoris
-                const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
-                    method: "DELETE",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ userId, productName, size })
-                });
-
-                if (response.ok) {
-                    button.classList.remove('active');
-                    console.log("❌ Retiré des favoris:", productName);
-                }
-            } else {
-                // Ajouter aux favoris
-                const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ userId, productName, price, size })
-                });
-
-                if (response.ok) {
-                    button.classList.add('active');
-                    console.log("❤️ Ajouté aux favoris:", productName);
-                }
-            }
-        } catch (error) {
-            console.error("Erreur favoris:", error);
-            alert("Erreur lors de la modification des favoris");
-        }
+   async function toggleFavorite(button) {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+        alert("Vous devez être connecté pour ajouter aux favoris!");
+        return;
     }
+
+    const productName = button.getAttribute("data-product");
+    const price = parseFloat(button.getAttribute("data-price"));
+    const productInfo = button.closest('.product-info');
+    const sizeSelect = productInfo.querySelector('.product-size');
+    const size = sizeSelect ? sizeSelect.value : "";
+
+    const isActive = button.classList.contains('active');
+
+    try {
+        if (isActive) {
+            // SUPPRESSION du favori
+            const body = { userId, productName };
+            if (size) body.size = size;
+
+            const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+
+            if (response.ok) {
+                button.classList.remove('active');
+                console.log("❌ Retiré des favoris:", productName);
+            }
+        } else {
+            // AJOUT du favori
+            const body = { userId, productName, price };
+            if (size) body.size = size;
+
+            const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+
+            if (response.ok) {
+                button.classList.add('active');
+                console.log("❤️ Ajouté aux favoris:", productName);
+            }
+        }
+    } catch (error) {
+        console.error("Erreur favoris:", error);
+        alert("Erreur lors de la modification des favoris");
+    }
+}
 
     // Charger l'état des favoris depuis le serveur
     async function loadFavoritesState() {

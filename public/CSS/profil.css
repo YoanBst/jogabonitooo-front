@@ -112,7 +112,6 @@ footer {
     margin-top: auto;
 }
 
-/* --- Styles spécifiques à la page profil --- */
 .profil-container {
     max-width: 900px;
     margin: 40px auto;
@@ -130,36 +129,9 @@ footer {
     margin-bottom: 20px;
     color: #009739;
 }
-.favoris-list, .commandes-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-.favori-card {
-    background: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-    padding: 12px;
-    width: 200px;
-    text-align: center;
-    position: relative;
-}
-.favori-card img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-.favori-card .favorite-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: #e74c3c;
-    background: none;
-    border: none;
-    font-size: 1.3em;
-    cursor: pointer;
-}
+
+
+
 .commande-card {
     background: #f8f8f8;
     border-radius: 8px;
