@@ -145,7 +145,7 @@ footer {
 }
 .favori-card img {
     width: 100%;
-    height: 80px;
+    height: 100px;
     object-fit: contain; /* Affiche l'image entière sans crop */
     border-radius: 6px;
     background: #fff;
