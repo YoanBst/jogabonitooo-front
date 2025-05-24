@@ -71,7 +71,7 @@ async function loadFavoris() {
                 <div class="favori-card">
                     <img src="${imgSrc}" alt="${fav.product_name}">
                     <div><b>${fav.product_name}</b></div>
-                    <div>Prix : ${fav.price} $</div>
+                    <div>Price : ${fav.price} $</div>
                     <button class="favorite-btn" title="Retirer des favoris" onclick="removeFavori('${fav.product_name.replace(/'/g,"\\'")}', '${fav.size || ""}')">
                         <i class="fas fa-heart"></i>
                     </button>
