@@ -80,10 +80,10 @@ async function loadFavoris() {
 
             });
         } else {
-            favorisList.innerHTML = "<span>Aucun favori pour l'instant.</span>";
+            favorisList.innerHTML = "<span>No favorites available.</span>";
         }
     } catch (e) {
-        favorisList.innerHTML = "<span>Erreur lors du chargement des favoris.</span>";
+        favorisList.innerHTML = "<span>Error during the loading of the favorites</span>";
     }
 }
 
@@ -143,10 +143,10 @@ async function loadCommandes() {
                 `;
             });
         } else {
-            commandesList.innerHTML = "<span>Aucune commande trouvée.</span>";
+            commandesList.innerHTML = "<span>No command find.</span>";
         }
     } catch (e) {
-        commandesList.innerHTML = "<span>Erreur lors du chargement des commandes.</span>";
+        commandesList.innerHTML = "<span>Error durring the loading of the command</span>";
     }
 }
 
