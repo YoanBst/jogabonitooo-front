@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isActive) {
             // SUPPRESSION du favori
             const body = { userId, productName, size: size || null };
-            body.size = size ? size : null; 
 
             const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
                 method: "DELETE",
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // AJOUT du favori
             const body = { userId, productName, price, size: size || null };
-            if (size) body.size = size;
 
             const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
                 method: "POST",
