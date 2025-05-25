@@ -72,7 +72,7 @@ async function loadFavoris() {
                     <img src="${imgSrc}" alt="${fav.product_name}">
                     <div><b>${fav.product_name}</b></div>
                     <div>Price : ${fav.price} $</div>
-                    <button class="favorite-btn" title="Retirer des favoris" onclick="removeFavori('${fav.product_name.replace(/'/g,"\\'")}', '${fav.size || ""}')">
+                   <button class="favorite-btn" title="Retirer des favoris" onclick="removeFavori('${fav.product_name.replace(/'/g,"\\'")}')">
                         <i class="fas fa-heart"></i>
                     </button>
                 </div>
@@ -88,15 +88,13 @@ async function loadFavoris() {
 }
 
 // Supprimer un favori
- async function removeFavori(productName, size) {
+async function removeFavori(productName) {
     const userId = localStorage.getItem("userId");
     if (!userId) return;
-    // Ajoute un log pour debug
-    console.log("Suppression favori:", { userId, productName, size });
     await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, productName, size })
+        body: JSON.stringify({ userId, productName })
     });
     loadFavoris();
 }
