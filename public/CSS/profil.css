@@ -2,7 +2,7 @@
 html, body {
     overflow-x: hidden;
     height: 100%;
-    background-image: url(../HTML/images/fondaccueil.jpg);
+    background-image: url(../HTML/images/jo.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -146,7 +146,7 @@ footer {
 .favori-card img {
     width: 100%;
     height: 100px;
-    object-fit: contain; /* Affiche l'image entière sans crop */
+    object-fit: contain; 
     border-radius: 6px;
     background: #fff;
 }
