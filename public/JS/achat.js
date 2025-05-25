@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             // AJOUT du favori
-            const body = { userId, productName};
+            const body = { userId, productName, price };
 
             const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/favorites", {
                 method: "POST",
