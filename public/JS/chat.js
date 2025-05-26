@@ -17,7 +17,7 @@ function decodeJWT(token) {
 async function getCurrentUsername(authToken) {
     try {
         const decodedToken = decodeJWT(authToken);
-        return decodedToken?.username || null; // Si le nom d'utilisateur est trouvé, retourne-le
+        return decodedToken?.username || null; 
     } catch (error) {
         console.error("Erreur lors de la décodage du token:", error);
         return null;
