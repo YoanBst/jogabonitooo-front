@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // CVV - seulement des chiffres
+  
     const cvvInput = document.getElementById('cvv');
     if (cvvInput) {
         cvvInput.addEventListener('input', function(e) {
