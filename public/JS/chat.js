@@ -85,7 +85,6 @@ function setupWebSocket(authToken) {
             return;
         }
 
-        // Appel à displayMessage en passant le nom d'utilisateur et le message
         displayMessage(data.owner, data.message, authToken);
     };
 
