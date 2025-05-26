@@ -39,13 +39,12 @@ function login() {
     });
   }
   
-
-// Pour la page d'accueil : vérifie si l'utilisateur est connecté
+// Vérifie si l'utilisateur est connecté
 window.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("page_accueil.html")) {
       fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/me', {
         method: 'GET',
-        credentials: 'include'  // Inclut les cookies avec la requête
+        credentials: 'include'  
       })
       .then(res => {
         if (!res.ok) throw new Error("Unauthorized");
@@ -54,7 +53,6 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         console.log("Utilisateur connecté :", data);
   
-        // Affichage du nom de l'utilisateur dans l'en-tête de la page
         const header = document.querySelector("header");
         const p = document.createElement("p");
         p.textContent = `Bienvenue, ${data.username} !`;
