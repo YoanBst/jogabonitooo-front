@@ -9,7 +9,7 @@ function register() {
 
     const data = { username: username, password: password };
 
-    console.log("Sending data:", data);  // Log des données envoyées
+    console.log("Sending data:", data);  
 
     fetch('https://jogabonitooo-back.cluster-ig3.igpolytech.fr/register', {
         method: 'POST',
@@ -18,11 +18,11 @@ function register() {
             "Accept": "application/json"
         },
         body: JSON.stringify(data),
-        mode: 'cors', // Important pour éviter les erreurs CORS
-        credentials: 'include'  // Inclure les cookies ou autres identifiants
+        mode: 'cors', 
+        credentials: 'include'  
     })
     .then(response => {
-        console.log("Response status:", response.status);  // Log du statut de la réponse
+        console.log("Response status:", response.status);  
         if (!response.ok) {
             return response.json().then(error => {
                 throw new Error(error.message);
@@ -31,14 +31,14 @@ function register() {
         return response.json();
     })
     .then(responseData => {
-        console.log("Response data:", responseData);  // Log des données de la réponse
+        console.log("Response data:", responseData);  
         alert("Registration successful! Please login.");
-        const userId = responseData.userId; // ← Assure-toi que le backend renvoie bien `userId`
+        const userId = responseData.userId; 
         if (userId) {
             localStorage.setItem(`basket_${userId}`, JSON.stringify([]));
-            localStorage.setItem("userId", userId); // Stocker aussi l'userId pour l'utiliser plus tard
+            localStorage.setItem("userId", userId); 
      }
-        window.location.href = 'login.html'; // Redirection après inscription
+        window.location.href = 'login.html'; 
     })
     .catch(error => {
         console.error('Error:', error);

@@ -152,28 +152,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-// Fonction pour récupérer le token JWT dans les cookies
-async function getAuthToken() {
-    try {
-        const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/get-token", {
-            method: 'GET',
-            credentials: 'include',  // Assure-toi d'inclure les cookies
-        });
-
-        const data = await response.json();
-        console.log("Token récupéré:", data.auth_token);
-
-        if (data.auth_token) {
-            return data.auth_token;  // Retourne le token si trouvé
-        } else {
-            console.error("Le token est vide ou absent");
-            return null;
-        }
-    } catch (error) {
-        console.error("Erreur lors de la récupération du token:", error);
-        return null;
-    }
-}
 
 
 
@@ -198,20 +176,20 @@ function updateCartCount() {
 }
 
 
-// Appelle cette fonction au chargement de la page
+
 window.addEventListener("DOMContentLoaded", updateCartCount);
 
 document.addEventListener("DOMContentLoaded", async function () {
     
 
-    // Récupère 4 anciens messages aléatoires
+    
     try {
         const response = await fetch("https://jogabonitooo-back.cluster-ig3.igpolytech.fr/api/messages");
         const data = await response.json();
         if (data.messages) {
             const chatContainer = document.getElementById("messages");
             data.messages.forEach(msg => {
-                // Utilise ta fonction d'affichage existante
+              
                 const messageElement = document.createElement("div");
                 messageElement.classList.add("message");
                 messageElement.textContent = `${msg.owner}: ${msg.message}`;

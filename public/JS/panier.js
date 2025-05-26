@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 basket.splice(index, 1);
             }
             localStorage.setItem(basketKey, JSON.stringify(basket));
-            location.reload(); // Recharge la page pour mettre à jour l'affichage
+            
         };
 
         li.appendChild(removeBtn);
@@ -119,13 +119,12 @@ function clearBasket() {
 
     const basketKey = `basket_${userId}`;
     localStorage.removeItem(basketKey);
-    localStorage.setItem("cartCount", 0); // Réinitialise le compteur
+    localStorage.setItem("cartCount", 0); 
 
     const basketDiv = document.getElementById('basket');
     basketDiv.innerHTML = `<p><strong>Total: 0 $</strong></p>`;
 }
 
-// FONCTION COMMANDER MODIFIÉE avec validation CVV et date d'expiration
 function commander() {
     const userId = localStorage.getItem('userId');
     if (!userId) {
@@ -148,12 +147,12 @@ function commander() {
     const cvvInput = document.getElementById('cvv');
 
     const adress = adressInput.value;
-    const card = cardInput.value.replace(/\s/g, ''); // Enlève les espaces
+    const card = cardInput.value.replace(/\s/g, ''); 
     const country = countryInput.value;
     const expiry = expiryInput.value;
     const cvv = cvvInput.value;
 
-    // VALIDATION COMPLÈTE
+ 
     if (!adress || !card || !country || !expiry || !cvv) {
         alert("Please fulfill all of the fields !");
         return;

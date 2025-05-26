@@ -228,7 +228,6 @@ footer {
     margin-top: auto;
 }
 
-/* Media Queries */
 @media screen and (max-width: 1024px) {
     .image-item {
         width: calc(50% - 20px);
@@ -286,7 +285,7 @@ footer {
     margin-bottom: 0;
 }
 
-/* STYLES PRODUITS - SUPPRIMES les anciens styles .image-item .add-to-basket */
+
 .product-actions {
     display: flex;
     align-items: center;
@@ -303,7 +302,7 @@ footer {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 2px; /* Ajustement fin de la position */
+    margin-top: 2px; 
 }
 
 .add-to-basket:hover {

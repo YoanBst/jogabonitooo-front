@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Appel initial
+    
     updateCartCount();
 
     addToBasketButtons.forEach(button => {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // NOUVEAU : Gestion des favoris
+    
     favoriteButtons.forEach(button => {
         button.addEventListener("click", () => toggleFavorite(button));
     });
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Charger l'état des favoris au chargement
     loadFavoritesState();
 
-    // Fonction pour basculer l'état des favoris
+    
    async function toggleFavorite(button) {
     const userId = localStorage.getItem("userId");
     if (!userId) {
