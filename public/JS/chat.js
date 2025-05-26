@@ -28,7 +28,7 @@ async function getCurrentUsername(authToken) {
 async function displayMessage(owner, message, authToken) {
     const chatContainer = document.getElementById("messages");
 
-    // Vérifie si chatContainer existe avant d'y ajouter des messages
+
     if (!chatContainer) {
         console.error("Erreur: chatContainer non trouvé");
         return;
@@ -37,10 +37,10 @@ async function displayMessage(owner, message, authToken) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message");
 
-    // Récupère le nom d'utilisateur actuel depuis le token
+    
     const currentUser = await getCurrentUsername(authToken);
 
-    // Si le nom de l'utilisateur est trouvé dans le token
+    
     if (!currentUser) {
         console.error("Utilisateur non trouvé dans le token");
         return;
@@ -51,20 +51,18 @@ async function displayMessage(owner, message, authToken) {
     userElement.textContent = `${owner}: `;
     userElement.classList.add("username");
 
-    // Affiche le contenu du message (ce qui a été réellement écrit par l'utilisateur)
+    // Affiche le contenu du message 
     const messageText = document.createElement("span");
     messageText.textContent = message;
 
-    // Classe du message pour différencier entre les messages de l'utilisateur actuel et des autres
+    
     messageElement.classList.add(owner === currentUser ? "my-message" : "other-message");
 
-    // Ajout du nom d'utilisateur et du message à la boîte de conversation
     messageElement.appendChild(userElement);
     messageElement.appendChild(messageText);
 
     chatContainer.appendChild(messageElement);
 
-    // Auto scroll au dernier message
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
