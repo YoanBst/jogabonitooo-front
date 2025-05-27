@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const price = parseFloat(button.getAttribute("data-price"));
             const userId = localStorage.getItem("userId");
 
-            // Vérifie si la taille est requise pour ce produit
+            
             const requireSize = button.getAttribute("data-require-size") !== "false";
 
             const productInfo = button.closest('.product-info');
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             localStorage.setItem(basketKey, JSON.stringify(basket));
             updateCartCount();
-            console.log("✅ Produit ajouté au panier :", name, "Taille :", size);
+            console.log(" Produit ajouté au panier :", name, "Taille :", size);
         });
     });
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 button.classList.remove('active');
-                console.log("❌ Retiré des favoris:", productName);
+                console.log(" Retiré des favoris:", productName);
             }
         } else {
             // AJOUT du favori
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 button.classList.add('active');
-                console.log("❤️ Ajouté aux favoris:", productName);
+                console.log("❤ Ajouté aux favoris:", productName);
             }
         }
     } catch (error) {
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (data.favorites) {
                 data.favorites.forEach(fav => {
-                    // Trouver le bouton correspondant
+                    
                     const btn = Array.from(favoriteButtons).find(button => {
                         return button.getAttribute('data-product') === fav.product_name && 
                                (button.closest('.product-info').querySelector('.product-size')?.value || '') === (fav.size || '');
